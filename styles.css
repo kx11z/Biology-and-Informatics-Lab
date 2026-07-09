@@ -34,49 +34,44 @@ a:hover {
   background: var(--wine-dark);
   color: var(--white);
   font-size: 0.9rem;
-  padding: 8px 20px;
+  padding: 8px 50px;
   text-align: center;
 }
 
-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
-}
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid #e6dede;
+}
 .nav-wrap {
   max-width: 1120px;
-  margin: 0 auto;
+  margin: 0 auto 0 40px;
   padding: 18px 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 220px 1fr 65px;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
+}
+
+.nav-wrap nav {
+  justify-self: end;
 }
 
 .site-name {
   text-decoration: none;
   color: var(--ink);
-  display: block;
-}
-
-.site-name strong {
-  display: block;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-}
-
-.site-name span {
-  display: block;
-  color: var(--muted);
-  font-size: 0.86rem;
-  margin-top: 2px;
+  display: flex;
+  align-items: center;
 }
 
 nav {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 nav a {
@@ -95,10 +90,27 @@ nav a:hover {
   background: #fffafa;
 }
 
+nav a[href="apply.html"] {
+  color: var(--wine-dark);
+  background: #f8ecef;
+  border-color: #ead1d7;
+}
+
+nav a[href="apply.html"]:hover {
+  color: var(--wine);
+  background: #f4e1e6;
+  border-color: #dfbdc6;
+}
+
 nav a.active {
   color: var(--white);
   background: var(--wine);
   border-color: var(--wine);
+}
+
+nav a[href="apply.html"].active {
+  background: var(--wine-dark);
+  border-color: var(--wine-dark);
 }
 
 .hero {
@@ -363,6 +375,10 @@ main {
     display: block;
   }
 
+  .nav-wrap {
+    margin: 0 auto;
+  }
+
   nav {
     justify-content: flex-start;
     margin-top: 14px;
@@ -384,4 +400,18 @@ main {
     max-width: 220px;
     margin-bottom: 16px;
   }
+}
+
+.site-logo {
+  width: 220px;
+  height: auto;
+  display: block;
+}
+.site-logo-abrev {
+  width: 65px;
+  height: auto;
+  display: block;
+}
+.abrev-link {
+  margin-left: 0;
 }
